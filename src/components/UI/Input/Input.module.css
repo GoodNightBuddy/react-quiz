@@ -17,7 +17,7 @@
   margin: 0 0 5px;
   width: 100%;
   outline: none;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .Input span {
@@ -28,4 +28,8 @@
 
 .Input.invalid label {
   color: #f01d30;
+}
+
+.Input div {
+  min-height: 25px;
 }

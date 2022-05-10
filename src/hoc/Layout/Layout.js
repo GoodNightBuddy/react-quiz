@@ -2,6 +2,7 @@ import { Component } from "react";
 import classes from './Layout.module.css'
 import MenuToggle from "../../components/Navigation/MenuToggle/MenuToggle";
 import Drawer from "../../components/Navigation/Drawer/Drawer";
+import { Outlet } from "react-router-dom";
 
 
 class Layout extends Component {
@@ -38,6 +39,7 @@ class Layout extends Component {
 
         <main>
           {this.props.children}
+          <Outlet />
         </main>
       </div>
     )

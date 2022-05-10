@@ -2,7 +2,7 @@ import { Component } from "react";
 import classes from './Auth.module.css'
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
-import is from 'is_js'
+import is, { object } from 'is_js'
 
 // const validateEmail = (email) => {
 //   return String(email)
@@ -17,6 +17,7 @@ import is from 'is_js'
 export default class Auth extends Component {
 
   state = {
+    isFormValid: false,
     formControls: {
       email: {
         value: '',
@@ -79,7 +80,6 @@ export default class Auth extends Component {
   }
 
   onChangeHandler = (event, controlName) => {
-
     const formControls = {...this.state.formControls}
     const control ={ ...formControls[controlName] }
 
@@ -89,7 +89,14 @@ export default class Auth extends Component {
 
     formControls[controlName] = control
 
+    let isFormValid = true
+
+    Object.keys(formControls).forEach(name => {
+      isFormValid = formControls[name].valid && isFormValid
+    });
+
     this.setState({
+      isFormValid,
       formControls
     })
   }
@@ -122,8 +129,20 @@ export default class Auth extends Component {
           <form onSubmit={e => e.preventDefault()} className={classes.AuthForm}>
             { this.renderInputs() }
 
-            <Button type="success" onClick={this.loginHandler}>Sign in</Button>
-            <Button type="primary" onClick={this.registerHandler}>Sign up</Button>
+            <Button
+            type="success"
+            onClick={this.loginHandler}
+            disabled={!this.state.isFormValid}
+            >
+              Sign in
+            </Button>
+            <Button
+            type="primary"
+            onClick={this.registerHandler}
+            disabled={!this.state.isFormValid}
+            >
+              Sign up
+            </Button>
           </form>
         </div>
       </div>
