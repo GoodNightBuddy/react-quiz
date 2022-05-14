@@ -9,11 +9,12 @@ import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 function App() {
   return (
+
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="auth" element={<Auth />} />
         <Route path="quiz-creator" element={<QuizCreator />} />
-        <Route path="quiz/:id" element={<Quiz />} />
+        <Route path="quizes/:id" element={<Quiz />} />
         <Route index element={<QuizList />} />
         <Route path="*" element={<NotFoundPage />} />
 
