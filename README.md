@@ -1,6 +1,6 @@
-# Just an app on React + Redux + Firebase
-You can authorize, create you own quizes if you are logged in and pass existing tests.
+# Quizlet on React + Redux + Firebase
+- Ability to pass existing tests
+- Ability to creating own tests if authorization passed
+- Email, password validation
+- Autologin
 
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

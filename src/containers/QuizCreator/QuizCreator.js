@@ -46,8 +46,7 @@ class QuizCreator extends Component {
 
   addQusetionHandler = event => {
     event.preventDefault()
-    
-    // const quiz = this.state.quiz.concat()
+
     const { question, option1, option2, option3, option4, } = this.state.formControls
 
     const questionItem = {
@@ -74,7 +73,7 @@ class QuizCreator extends Component {
 
   createQuizHandler = event => {
     event.preventDefault()
-      const response = axios.post('/quizes.json', this.state.quiz)
+      // const response = axios.post('/quizes.json', this.state.quiz)
 
       this.setState({
         isFormValid: false,
