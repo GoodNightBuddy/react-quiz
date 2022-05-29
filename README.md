@@ -1,6 +1,6 @@
 # Quizlet on React + Redux + Firebase
-- Ability to pass existing tests
-- Ability to creating own tests if authorization passed
-- Email, password validation
-- Autologin
-
+- Pass existing tests
+- Authorization(Firebase)
+- Custom email/password validation
+- Create own tests if authorization passed(saved on Firebase)
+- Autologin(local storage)
